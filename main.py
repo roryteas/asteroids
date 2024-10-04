@@ -15,9 +15,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        pygame.display.flip()
+        player.update(dt)
+        screen.fill("black")
         player.draw(screen)
-        dt = clock.tick(60)
+        pygame.display.flip()
+        dt = clock.tick(60) /1000
     return
 
 if __name__ == "__main__":
